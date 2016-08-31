@@ -1,0 +1,7 @@
+.products__img a:after {
+	display: none;
+}
+.products__img a:hover:after {
+	display: block;
+	color: #fff;
+}

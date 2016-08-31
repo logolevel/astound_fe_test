@@ -1,0 +1,294 @@
+/*include fonts*/
+@import "_fonts"
+/*variables*/
+/*colors*/
+$accent-color: #8ae6cf
+$text-color: #282828
+$red-color: #ce2c52
+$blue-color: #2c87ce
+$dark-blue-color: #2c303d
+$grey-color: #ababab
+/*fonts*/
+$oswald-font: "Oswald Bold", Arial, sans-serif
+$opens-reg-font: "OpenSans-Regular", Arial, sans-serif
+$opens-bold-font: "OpenSans-Bold", Arial, sans-serif
+/*animation*/
+$animation: all 0.3s ease-in-out
+/*main styles*/
+*
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  &:before, &:after
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+body
+	background-color: #fff
+a
+	text-decoration: none
+.container
+	width: 835px
+	margin: 0 auto
+	padding: 50px 0
+	position: relative
+.row
+	margin-right: -20px
+.clearfix:after
+	display: table
+	content: ''
+	clear: both
+.logo
+	display: none
+	max-width: 100%
+.products__item
+	width: 265px
+	text-transform: uppercase
+	float: left
+	margin-right: 20px
+.products__img a
+	position: relative
+	font-family: $opens-bold-font
+	display: block
+	color: $dark-blue-color
+	&:after
+		position: absolute
+		top: 0
+		left: 0
+		bottom: 0
+		right: 0
+		margin: auto
+		width: 50%
+		height: 30px
+		content: 'Show more'
+		font-size: 18px
+		padding: 5px
+		text-align: center
+		opacity: 0
+		cursor: pointer
+		background-color: $accent-color
+		transition: $animation
+	&:hover:after
+		opacity: 1
+.products__more
+	position: absolute
+	bottom: 0
+	left: 0
+	right: 0
+	margin: auto
+	width: 100%
+	display: none
+	color: $accent-color
+	background-color: #000
+	background-color: rgba(#000, 0.525)
+	filter: alpha(Opacity=50)
+	padding: 25px 55px
+.products__img,
+.products__img img
+	width: 265px
+	height: 265px
+.products__price
+	position: absolute
+	bottom: 15px
+	padding: 5px
+	right: 0
+	background-color: $accent-color
+	font-size: 16px
+	color: $dark-blue-color
+.products__stock
+	color: $red-color
+	padding: 0 10px
+.products__title
+	font-size: 12px
+	font-family: $oswald-font
+	text-align: center
+	padding: 10px 0
+	text-decoration: none
+.products__title--price
+	display: none
+	padding-top: 0
+	color: $text-color
+	font-family: $opens-bold-font
+	font-size: 24px
+	margin-bottom: 15px
+.products__title--price-red
+	color: $red-color
+/*style for popup window*/
+#hidden_bg
+  display: none
+  opacity: 0.8
+  position: fixed
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+  padding: 16px
+  background-color: #000
+  background-color: rgba(#000, 0.725)
+  filter: alpha(Opacity=50)
+  z-index: 100
+  overflow: auto
+.popup-cl
+  height: 465px
+#popup
+  width: 100%
+  margin: 80px auto
+  display: none
+  background: #fff
+  z-index: 200
+  padding: 20px 16px
+  position: absolute
+.popup__img
+	position: relative
+	float: left
+.popup__img
+	width: 400px
+	height: 420px
+.popup__social-list
+	position: absolute
+	top: 50px
+	left: 10px
+.popup__social-list a
+	display: inline-block
+	border: 2px solid $blue-color
+	border-radius: 50%
+	color: $blue-color
+	width: 40px
+	height: 40px
+	font-size: 18px
+	padding: 10px 5px 0 10px
+.popup__social-item
+	margin: 10px 0
+a.none-circle
+	position: absolute
+	top: 18px
+	left: 18px
+	border: 0
+	font-size: 24px
+	color: $blue-color
+/*toggle social list*/
+.popup__social-list
+	display: none
+.popup__social-list.open
+	display: block
+/*popup description*/
+.popup__container
+	position: relative
+.popup__img
+	float: left
+	margin-right: 28px
+.popup__description-title
+	width: 375px
+	float: right
+	font-family: $oswald-font
+	font-size: 24px
+	text-transform: uppercase
+	margin-bottom: 10px
+.popup__description-id
+	font-size: 12px
+	margin-bottom: 25px
+	color: $grey-color
+.popup__description-price
+	font-size: 24px
+	font-family: $opens-bold-font
+	margin-bottom: 25px
+.popup__description-price-black
+	margin-right: 20px
+	text-decoration: line-through
+.popup__description-price-red
+	color: $red-color
+/*like rating*/
+.rating
+	padding: 0
+	margin: 0
+	margin-bottom: 25px
+	li
+		cursor: pointer
+		display: inline-block
+		list-style-type: none
+		text-transform: none
+	
+.star,
+.rating:not(.vote-cast):hover .star:hover ~ .star,
+.rating.vote-cast .star.selected ~ .star
+	color: $grey-color
+	
+.rating:hover .star,
+.rating.vote-cast .star
+	color: $red-color
+.icon-star
+	font-size: 21px
+/*size links*/
+.popup__description-size-item
+	display: inline-block
+	border: 2px solid $dark-blue-color
+	border-radius: 50%
+	color: $dark-blue-color
+	width: 40px
+	height: 40px
+	font-size: 12px
+	text-transform: uppercase
+	font-family: $opens-bold-font
+	text-align: center
+	line-height: 3
+	&:hover
+		border-color: $accent-color
+		cursor: pointer
+.popup__description-text
+	font-size: 14px
+	line-height: 16px
+	margin-bottom: 40px
+	padding-right: 40px
+	font-family: $opens-reg-font
+.show-tablet
+	display: none
+	font-family: $opens-bold-font
+	font-size: 18px
+	padding: 15px 0 10px
+.popup__description-size
+	margin-bottom: 25px
+	font-family: $opens-bold-font
+	text-transform: uppercase
+.popup__description-size-item--title
+	display: inline-block
+.popup__description-size li b
+	display: none
+.popup__description-size-item--title
+	border: 0
+	font-size: 16px
+	line-height: 18px
+.popup__description-size-item
+	margin-left: 10px
+.popup__description-size-item a
+	color: $dark-blue-color
+.popup__description-btn
+	padding: 15px 55px
+	background-color: $accent-color
+	cursor: pointer
+	text-transform: uppercase
+	font-family: $opens-bold-font
+	font-size: 14px
+	border: 0
+	border-radius: 25px
+	outline: 0
+	&:hover
+		color: #fff
+.active a
+	color: #fff
+.active
+	background-color: $dark-blue-color
+.popup__close
+	position: absolute
+	top: -10px
+	right: 0
+	font-size: 42px
+	color: $blue-color
+.popup__social-item
+	a
+		transition: $animation
+		&:hover
+			color: $dark-blue-color
+			border-color: $dark-blue-color
+
+/*include media queries*/
+@import "_media"
